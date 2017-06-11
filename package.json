@@ -10,7 +10,9 @@
   "devDependencies": {
     "enzyme": "^2.8.2",
     "gh-pages": "^1.0.0",
+    "react-addons-test-utils": "^15.5.1",
     "react-scripts": "1.0.7",
+    "react-test-renderer": "^15.5.4",
     "react-toolbox-themr": "^1.0.2"
   },
   "scripts": {

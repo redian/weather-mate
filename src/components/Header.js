@@ -11,13 +11,11 @@ const GithubIcon = () => (
 
 function Header (props) {
   return (
-    <div className="content">
-      <AppBar title='Weather Mate' leftIcon='cloud' rightIcon={<GithubIcon />}>
-        <Navigation type='horizontal'>
-          <Link href='https://github.com/redian/weather-mate' active label='Repo'/>
-        </Navigation>
-      </AppBar>
-    </div>
+    <AppBar title='Weather Mate' leftIcon='cloud' rightIcon={<GithubIcon />}>
+      <Navigation type='horizontal'>
+        <Link href='https://github.com/redian/weather-mate' active label='Repo'/>
+      </Navigation>
+    </AppBar>
   );
 }
 
