@@ -13,7 +13,7 @@ const GithubIcon = () => (
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="content">
         <AppBar title='Weather Mate' leftIcon='cloud' rightIcon={<GithubIcon />}>
           <Navigation type='horizontal'>
             <Link href='http://github.com/redian/weather-map' active label='Repo'/>
