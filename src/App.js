@@ -16,7 +16,7 @@ class App extends Component {
       <div className="content">
         <AppBar title='Weather Mate' leftIcon='cloud' rightIcon={<GithubIcon />}>
           <Navigation type='horizontal'>
-            <Link href='http://github.com/redian/weather-map' active label='Repo'/>
+            <Link href='https://github.com/redian/weather-mate' active label='Repo'/>
           </Navigation>
         </AppBar>
       </div>
