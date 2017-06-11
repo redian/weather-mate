@@ -1,13 +1,14 @@
 {
   "name": "weather-mate",
   "version": "0.1.0",
-  "private": true,
+  "homepage": "https://redian.github.io/weather-mate",
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-toolbox": "^2.0.0-beta.12"
   },
   "devDependencies": {
+    "gh-pages": "^1.0.0",
     "react-scripts": "1.0.7",
     "react-toolbox-themr": "^1.0.2"
   },
