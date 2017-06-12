@@ -22,10 +22,19 @@ $ yarn install && yarn start
 ```
 
 ## Available Scripts
-> Coming Soon
+```
+$ yarn start
+$ yarn test
+$ yarn build
+$ yarn toolbox
+$ yarn eject
+```
 
 ## Deployment Process
 > yarn deploy
+
+The application is deployed to Github Pages https://redian.github.io/weather-mate/
+
 
 ## Tools and libraries used
 - [React](https://facebook.github.io/react/) A modern Javascript framework to build user interfaces.
