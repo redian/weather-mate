@@ -8,15 +8,16 @@ const divStyle = {
 };
 
 const Loader = (props) => {
-  let res = null;
-  if (props.loading) {
-    res = 
-      <div style={divStyle}>
-        <p>Loading...</p>
-        <ProgressBar type="circular" mode="indeterminate" multicolor/>
-      </div>
+  if (!props.loading) {
+    return null;
   }
-  return res;
+  
+  return (
+    <div style={divStyle}>
+      <p>Loading...</p>
+      <ProgressBar type="circular" mode="indeterminate" multicolor/>
+    </div>
+  )
 };
 
 export default Loader;

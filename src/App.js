@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import Loader from './components/Loader';
 import SearchForm from './components/SearchForm';
+import DaysTable from './components/DaysTable';
 
 import './App.css';
 
@@ -31,11 +32,25 @@ class App extends Component {
   handleSubmit = (evt) => {
     this.setState({ loading: true });
     evt.preventDefault();
-    const URL = `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city},uk&appid=cc9fafbcb2f3ff46890ef19abaa2fe87`;
+    //const URL = '/data.json';
+    const URL = `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city},uk&units=metric&appid=cc9fafbcb2f3ff46890ef19abaa2fe87`;
     fetch(URL)
     .then( response => response.json() )
     .then( (data) => {
-      this.setState({list: data.list});
+      const processedList = [];
+      for(let item of data.list) {
+        const aDate = item.dt_txt.split(' ');
+        if(!processedList[aDate[0]]){
+          processedList[aDate[0]] = [];
+        }
+        processedList[aDate[0]].push({
+          hour: aDate[1].substr(0,5),
+          temp: item.main.temp,
+          icon: `http://openweathermap.org/img/w/${item.weather[0].icon}.png`,
+          description: item.weather[0].description,
+        })
+      }
+      this.setState({list: processedList});
       setTimeout(() => this.setState({ loading: false }), 500); 
     });
   }
@@ -49,6 +64,7 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
           handleInputChange={this.handleInputChange}/>
         <Loader loading={this.state.loading}/>
+        <DaysTable list={this.state.list}/>
       </div>
     );
   }
