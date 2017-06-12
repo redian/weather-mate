@@ -10,7 +10,8 @@ Weather Mate's aim is to provide a handy tool for your local weather updates.
   - [yarn toolbox](#yarn-toolbox)
   - [yarn eject](#yarn-eject)
 - [Deployment](#deployment)
-- [Tools and Libraries used](tool-libraries-used)
+- [Tools and Libraries used](#tool-libraries-used)
+- [API](#openweathermap-api)
 
 ## Installation
 
@@ -43,3 +44,6 @@ The application is deployed to Github Pages https://redian.github.io/weather-mat
 - [react-toolbox-themr](https://github.com/react-toolbox/react-toolbox-themr) A tool to statically extract and generate custom themes for React Toolbox.
 - [gh-pages](https://pages.github.com/) Github Pages, publishing directly from your github hosted repository.
 - [enzyme](http://airbnb.io/enzyme/) Enzyme is a Javascript testing utility for React apps.
+
+## OpenWeatherMap API 
+- [5 Days Forecast API](http://openweathermap.org/forecast5)
