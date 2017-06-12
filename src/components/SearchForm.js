@@ -8,7 +8,7 @@ const sectionStyle = {
 }
 const SearchForm = (props) => (
   <section style={sectionStyle}>
-    <form >
+    <form onSubmit={props.handleSubmit}>
       <Input 
         type='text' 
         label='Search by City' 
@@ -23,5 +23,6 @@ export default SearchForm;
 
 SearchForm.propTypes = {
   city: PropTypes.string.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
   handleInputChange: PropTypes.func.isRequired
 }

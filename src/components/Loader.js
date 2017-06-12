@@ -7,11 +7,16 @@ const divStyle = {
     textAlign: "center"
 };
 
-const Loader = () => (
-	<div style={divStyle}>
-    <p>Loading...</p>
-		<ProgressBar type="circular" mode="indeterminate" multicolor/>
-	</div>
-);
+const Loader = (props) => {
+  let res = null;
+  if (props.loading) {
+    res = 
+      <div style={divStyle}>
+        <p>Loading...</p>
+        <ProgressBar type="circular" mode="indeterminate" multicolor/>
+      </div>
+  }
+  return res;
+};
 
 export default Loader;
