@@ -33,7 +33,8 @@ class App extends Component {
     this.setState({ loading: true });
     evt.preventDefault();
     //const URL = '/data.json';
-    const URL = `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city},uk&units=metric&appid=cc9fafbcb2f3ff46890ef19abaa2fe87`;
+    // Need to do that as github pages is on https and 
+    const URL = `https://crossorigin.me/http//api.openweathermap.org/data/2.5/forecast?q=${this.state.city},uk&units=metric&appid=cc9fafbcb2f3ff46890ef19abaa2fe87`;
     fetch(URL)
     .then( response => response.json() )
     .then( (data) => {
@@ -46,7 +47,7 @@ class App extends Component {
         processedList[aDate[0]].push({
           hour: aDate[1].substr(0,5),
           temp: item.main.temp,
-          icon: `http://openweathermap.org/img/w/${item.weather[0].icon}.png`,
+          icon: `https://crossorigin.me/http//openweathermap.org/img/w/${item.weather[0].icon}.png`,
           description: item.weather[0].description,
         })
       }
