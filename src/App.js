@@ -38,7 +38,7 @@ class App extends Component {
     fetch(URL)
     .then( response => response.json() )
     .then( (data) => {
-      const processedList = [];
+      let processedList = [];
       for(let item of data.list) {
         const aDate = item.dt_txt.split(' ');
         if(!processedList[aDate[0]]){
