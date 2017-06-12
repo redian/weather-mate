@@ -47,7 +47,7 @@ class App extends Component {
         processedList[aDate[0]].push({
           hour: aDate[1].substr(0,5),
           temp: item.main.temp,
-          icon: `https://cors-anywhere.herokuapp.com/http://openweathermap.org/img/w/${item.weather[0].icon}.png`,
+          icon: `https://openweathermap.org/img/w/${item.weather[0].icon}.png`,
           description: item.weather[0].description,
         })
       }
