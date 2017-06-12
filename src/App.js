@@ -33,7 +33,7 @@ class App extends Component {
     this.setState({ loading: true });
     evt.preventDefault();
     //const URL = '/data.json';
-    // Need to do that as github pages is on https and 
+    // Need to do that as github pages is on https and api.openweathermap.org is only available throught http  
     const URL = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city},uk&units=metric&appid=cc9fafbcb2f3ff46890ef19abaa2fe87`;
     fetch(URL)
     .then( response => response.json() )
