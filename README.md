@@ -47,3 +47,6 @@ The application is deployed to Github Pages https://redian.github.io/weather-mat
 
 ## OpenWeatherMap API 
 - [5 Days Forecast API](http://openweathermap.org/forecast5)
+
+## Lighthouse PWA Report 
+![Lighthouse PWA](public/images/lighthouse-15th-june.png "Report on 15th of June 2017")
