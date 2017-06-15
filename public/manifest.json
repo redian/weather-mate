@@ -27,6 +27,6 @@
   "description": "This is a react pwa demo application, showing you your local weather.",
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#303f9f",
   "background_color": "#ffffff"
 }
