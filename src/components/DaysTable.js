@@ -8,17 +8,20 @@ const DaysTable = (props) => {
 
   const tableRow = (date) => {
     return (
-      <TableRow key={date}>
+      <TableRow key={date} className="days-table">
         <TableCell>{date}</TableCell>
         {props.list[date].map((item, idx) =>
           <TableCell key={idx}>
-            Hour: {item.hour}
-            <hr />
-            Temp: {item.temp} ℃
-            <hr />
-            Description: {item.description}
-            <hr />
-            <img alt="{item.description}" src={item.icon} />
+            <div className="hour">
+              Hour: {item.hour}
+            </div>
+            <div className="temperature">
+              Temp: {item.temp} ℃
+            </div>
+            <div className="description">
+              <img alt="{item.description}" src={item.icon} />
+              {item.description}
+            </div>
           </TableCell>
         )}
       </TableRow>

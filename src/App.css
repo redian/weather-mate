@@ -2,3 +2,42 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
+
+.days-table div {
+  width: 6rem;
+  text-align: center;
+}
+.days-table div:nth-child(2) {
+  border-bottom: thin solid #999;
+}
+
+.days-table .description img {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+tbody td:first-child {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 760px) {
+
+  table { 
+    width:100%;
+  }
+  thead {
+    display: none;
+  }
+
+  tbody td {
+    display: block;
+    text-align: center !important;
+  }
+
+  tbody td:not(:first-child) {
+    display: inline-block;
+    width: 13rem;
+    height: 9rem !important;
+  }
+}
