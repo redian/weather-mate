@@ -1,6 +1,7 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",
+  "lang": "en-GB",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,6 +9,7 @@
       "type": "image/png"
     }
   ],
+  "description": "This is a react pwa demo application, showing you your local weather.",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
