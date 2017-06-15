@@ -6,6 +6,7 @@ body {
 .days-table div {
   width: 6rem;
   text-align: center;
+  padding-bottom: 0.3rem;
 }
 .days-table div:nth-child(2) {
   border-bottom: thin solid #999;
