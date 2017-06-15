@@ -7,9 +7,12 @@ const DaysTable = (props) => {
   }
 
   const tableRow = (date) => {
+    const oDate = new Date(date);
+    // Print a more readable date i.e. Fri, 16 Jun
+    const dateString = oDate.toUTCString().substring(0, 11); 
     return (
       <TableRow key={date} className="days-table">
-        <TableCell>{date}</TableCell>
+        <TableCell>{dateString}</TableCell>
         {props.list[date].map((item, idx) =>
           <TableCell key={idx}>
             <div className="hour">
@@ -19,7 +22,7 @@ const DaysTable = (props) => {
               Temp: {item.temp} ℃
             </div>
             <div className="description">
-              <img alt="{item.description}" src={item.icon} />
+              <img alt={item.description} src={item.icon} />
               {item.description}
             </div>
           </TableCell>
