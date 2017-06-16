@@ -12,6 +12,7 @@ Weather Mate's aim is to provide a handy tool for your local weather updates.
 - [Deployment](#deployment)
 - [Tools and Libraries used](#tool-libraries-used)
 - [API](#openweathermap-api)
+- [Lighthouse PWA Report](#lighthouse-pwa-report)
 
 ## Installation
 
