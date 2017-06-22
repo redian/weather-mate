@@ -11,6 +11,7 @@ const SearchForm = (props) => (
     <form onSubmit={props.handleSubmit}>
       <Input 
         type='text' 
+        aria-label='Search'
         label='Search by City' 
         value={props.city} 
         onChange={props.handleInputChange} 
