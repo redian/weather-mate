@@ -13,14 +13,18 @@ class App extends Component {
       loading: true,
       city: '',
       list: [],
+      lat: '',
+      lon: '',
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.geolocationSearch = this.geolocationSearch.bind(this);
+    this.weatherApiRequest = this.weatherApiRequest.bind(this);
   }
 
   componentDidMount() {
-    setTimeout(() => this.setState({ loading: false }), 1000); 
+    this.geolocationSearch();
   }
 
   handleInputChange = (value) => {
@@ -33,8 +37,16 @@ class App extends Component {
     this.setState({ loading: true });
     evt.preventDefault();
     //const URL = '/data.json';
-    // Need to do that as github pages is on https and api.openweathermap.org is only available throught http  
-    const URL = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city},uk&units=metric&appid=cc9fafbcb2f3ff46890ef19abaa2fe87`;
+    // Need to do that as github pages is on https and api.openweathermap.org is only available throught http 
+    this.weatherApiRequest();
+  }
+
+  weatherApiRequest = () => {
+    let query = `q=${this.state.city},uk`;
+    if(this.state.city === ''){
+      query = `lat=${this.state.lat}&lon=${this.state.lon}`;
+    }
+    const URL = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?${query}&units=metric&appid=cc9fafbcb2f3ff46890ef19abaa2fe87`;
     fetch(URL)
     .then( response => response.json() )
     .then( (data) => {
@@ -51,9 +63,38 @@ class App extends Component {
           description: item.weather[0].description,
         })
       }
-      this.setState({list: processedList});
-      setTimeout(() => this.setState({ loading: false }), 500); 
+      this.setState({
+        list: processedList,
+        city: data.city.name,
+      });
+      this.setState({ loading: false }); 
     });
+  }
+
+  geolocationSearch = () => {
+    /// Successful geolocation
+    var success = function (position) {
+      var lat = position.coords.latitude;
+      var lon = position.coords.longitude;
+      
+      /// Update state with new API Data based on lat lon
+      this.setState({
+        lat: lat,
+        lon: lon,
+      });
+      this.weatherApiRequest();
+    }.bind(this);
+  
+    /// Error'd geolocation
+    var error = function (error) {
+      if (error.message === 'User denied Geolocation')
+      {
+        alert('Please enable location services');
+      }
+    };
+    
+    /// Get the position
+    navigator.geolocation.getCurrentPosition(success, error);
   }
 
   render() {

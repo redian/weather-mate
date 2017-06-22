@@ -14,7 +14,7 @@ const Loader = (props) => {
   
   return (
     <div style={divStyle}>
-      <p>Loading...</p>
+      <p>Loading you local weather...</p>
       <ProgressBar type="circular" mode="indeterminate" multicolor/>
     </div>
   )
