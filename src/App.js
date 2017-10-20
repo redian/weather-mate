@@ -69,6 +69,7 @@ class App extends Component {
   }
 
   geolocationSearch = () => {
+    this.setState({ loading: true }); 
     /// Successful geolocation
     var success = function (position) {
       var lat = position.coords.latitude;
@@ -101,7 +102,8 @@ class App extends Component {
         <SearchForm 
           {...this.state}
           handleSubmit={this.handleSubmit}
-          handleInputChange={this.handleInputChange}/>
+          handleInputChange={this.handleInputChange}
+          handleClick={this.geolocationSearch}/>
         <Loader loading={this.state.loading}/>
         <DaysTable list={this.state.list}/>
       </div>
