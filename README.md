@@ -39,7 +39,7 @@ The application is deployed to Github Pages https://redian.github.io/weather-mat
 
 
 ## Tools and libraries used
-- [React](https://facebook.github.io/react/) A modern Javascript framework to build user interfaces.
+- [React 16](https://facebook.github.io/react/) A modern Javascript framework to build user interfaces.
 - [create-react-app](https://github.com/facebookincubator/create-react-app) A CLI tool to facilitate React development.
 - [react-toolbox](https://github.com/react-toolbox/react-toolbox) A set of React Components to build interfaces according to Google's Material Design principles.
 - [react-toolbox-themr](https://github.com/react-toolbox/react-toolbox-themr) A tool to statically extract and generate custom themes for React Toolbox.
