@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      loading: true,
+      loading: false,
       city: '',
       list: [],
       lat: '',
@@ -23,9 +23,6 @@ class App extends Component {
     this.weatherApiRequest = this.weatherApiRequest.bind(this);
   }
 
-  componentDidMount() {
-    this.geolocationSearch();
-  }
 
   handleInputChange = (value) => {
     this.setState({
