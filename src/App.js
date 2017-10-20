@@ -10,7 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      loading: true,
+      loading: false,
       city: '',
       list: [],
       lat: '',
@@ -23,9 +23,6 @@ class App extends Component {
     this.weatherApiRequest = this.weatherApiRequest.bind(this);
   }
 
-  componentDidMount() {
-    this.geolocationSearch();
-  }
 
   handleInputChange = (value) => {
     this.setState({
@@ -46,7 +43,7 @@ class App extends Component {
     if(this.state.city === ''){
       query = `lat=${this.state.lat}&lon=${this.state.lon}`;
     }
-    const URL = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?${query}&units=metric&appid=cc9fafbcb2f3ff46890ef19abaa2fe87`;
+    const URL = `https://api.openweathermap.org/data/2.5/forecast?${query}&units=metric&appid=cc9fafbcb2f3ff46890ef19abaa2fe87`;
     fetch(URL)
     .then( response => response.json() )
     .then( (data) => {

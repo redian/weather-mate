@@ -3,17 +3,18 @@
   "version": "0.1.0",
   "homepage": "https://redian.github.io/weather-mate",
   "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-toolbox": "^2.0.0-beta.12"
   },
   "devDependencies": {
-    "enzyme": "^2.8.2",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
     "gh-pages": "^1.0.0",
     "prop-types": "^15.5.10",
     "react-addons-test-utils": "^15.5.1",
-    "react-scripts": "1.0.7",
-    "react-test-renderer": "^15.5.4",
+    "react-scripts": "^1.0.14",
+    "react-test-renderer": "^16.0.0",
     "react-toolbox-themr": "^1.0.2"
   },
   "scripts": {

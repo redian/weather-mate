@@ -1,11 +1,10 @@
 import React from 'react';
-import { render } from 'enzyme';
 import DaysTable from './DaysTable';
 
 it('should not render anything if list props is empty', () => {
   const list = [];
   const wrapper = render(<DaysTable list={list}/>);
-  expect(wrapper.html()).toBe('');
+  expect(wrapper.html()).toBe(null);
 });
 
 it('renders DaysTable component properly when list is provided', () => {
